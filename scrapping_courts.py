@@ -31,7 +31,7 @@ except IndexError:
 #N2-ский районный суд
 response2 = requests.get("https://огромная в 8 строк ссылка на конкретную поисковую выдачу N2-ского районного суда", headers=headers)
 response2.encoding = 'windows-1251'
-pattern = re.compile(r'Всего по запросу найдено.....')
+pattern2 = re.compile(r'Всего по запросу найдено.....')
 c2 = pattern2.findall(response2.text)
 err2 = 0
 try:
@@ -75,7 +75,7 @@ except IndexError:
 response5 = requests.get("https://огромная в 8 строк ссылка на конкретную поисковую выдачу N5-ского районного суда", headers=headers),
                           headers=headers)
 pattern5 = re.compile(r'ничего не найдено')
-c5 = pattern55.findall(response5.text)
+c5 = pattern5.findall(response5.text)
 err5 = 0
 if c5 == ['ничего не найдено']:
     print("N5-ский районный суд ", datetime.date.today(), 0)
