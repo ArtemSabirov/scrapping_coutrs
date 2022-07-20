@@ -2,7 +2,6 @@
 
 
 import pandas as pd
-import os
 import requests
 import re
 import datetime
@@ -55,7 +54,7 @@ except IndexError:
     try:
         print('N3-ский районный суд', datetime.date.today(), c[0][27:]) # распечатка нужна для отладки и просмотра работы при запуске в терминале
     except IndexError:
-        err = 1
+        err2 = 1
         
         
 #N4-ский районный суд
@@ -70,7 +69,7 @@ except IndexError:
     try:
         print('N4-ский районный суд', datetime.date.today(), c[0][27:]) # распечатка нужна для отладки и просмотра работы при запуске в терминале
     except IndexError:
-        err = 1
+        err3 = 1
 
 #N5-ский районный суд, в котором исков к доверителю нет.
 response5 = requests.get("https://огромная в 8 строк ссылка на конкретную поисковую выдачу N5-ского районного суда", headers=headers),
@@ -167,7 +166,7 @@ html_table = MIMEText(html_table, 'html')
 msg.attach(html_table)
 
 # создаем сервер
-server = smtplib.SMTP('smtp.mail.ru: 587')
+server = smtplib.SMTP('smtp.______: 587')
 
 server.starttls()
 
